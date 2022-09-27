@@ -13,7 +13,7 @@ public class Main {
         String hostname = "localhost";
         String database = "bookish";
         String user = "root";
-        String password = "So, you think you can guess my password, do you?";
+        String password = "guess my password";
         String connectionString = "jdbc:mysql://" + hostname + "/" + database + "?user=" + user + "&password=" + password + "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT&useSSL=false";
 
         jdbcMethod(connectionString);
@@ -37,7 +37,7 @@ public class Main {
                 System.out.println("BookId is: " + bookID + " Title is: " + title +
                         " Author is: " + author + " ISBN: " + isbn + " category: " + category);
             }
-            rs.close(); // Good to close the ResultSet once done.
+            rs.close();
             stmt.close();
             connection.close();
         } catch (SQLException e) {
