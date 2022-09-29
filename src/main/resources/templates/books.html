@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<!--@thymesVar id="model" type="org.softwire.training.bookish.models.page.AboutPageModel"-->
+
+<head>
+    <title>Bookish - About Us</title>
+
+    <link rel="stylesheet" href="/styles/general.css"/>
+    <link rel="stylesheet" href="/styles/navbar.css"/>
+<!--    <link rel="stylesheet" href="/styles/about.css"/>-->
+
+    <style>
+        td, th {
+            border: 1px solid #000000;
+            padding: 6px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+        tr:hover {background-color: #ddd;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #7e97ce;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    <!-- This element is replaced by the HTML in fragments/navbar.html -->
+</div>
+
+<div class="container">
+    <h2>All books in the database:</h2>
+
+    <table class="book-list">
+        <tr>
+            <th>BookID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Category</th>
+        </tr>
+
+            <tr th:each="book : ${abm.books}" class="book">
+                <td th:text="${book.BookID}">*</td>
+                <td th:text="${book.title}">*</td>
+                <td th:text="${book.author}">*</td>
+                <td th:text="${book.isbn}">*</td>
+                <td th:text="${book.category}">*</td>
+
+            </tr>
+
+    </table>
+</div>
+
+</body>
+</html>
+

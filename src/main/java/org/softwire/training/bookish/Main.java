@@ -1,11 +1,9 @@
 package org.softwire.training.bookish;
-
 import org.jdbi.v3.core.Jdbi;
 import org.softwire.training.bookish.models.database.Book;
 
 import java.sql.*;
 import java.util.List;
-
 
 public class Main {
 
@@ -41,7 +39,7 @@ public class Main {
             stmt.close();
             connection.close();
         } catch (SQLException e) {
-            System.out.println(e.toString());
+            System.out.println(e);
         }
     }
 

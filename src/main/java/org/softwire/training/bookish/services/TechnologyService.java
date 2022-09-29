@@ -2,7 +2,6 @@ package org.softwire.training.bookish.services;
 
 import org.softwire.training.bookish.models.database.Technology;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
