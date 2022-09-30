@@ -31,5 +31,18 @@ CREATE TABLE Copies(
 
 );
 
+insert into Users (UserID, FirstName, LastName, Email, Address, AppliedFees)
+values
+(1,'Elsa','Frozen','elsa@frozen.co.uk','NW34BJ',15.50),
+(2,'Galadriel','Elf','galadriel@rivendell.org','SW1A1AA',45.80),
+(3,'Han','Solo','han@starwars.org','LA23 1LJ',99.99),
+(4,'Chewbacca','Brown','chewie@starwars.org','DE4 1AB',80.50);
 
+INSERT INTO Books (BookID, title, author, isbn, category) VALUES (1, 'Clean Code', 'Robert Martin', '978-0-13-235088-4', 'Computing');
+INSERT INTO Books (BookID, title, author, isbn, category) VALUES (2, 'Modern Java in Action', 'Raoul Urma', '978-1-61729356-6', 'Computing');
+INSERT INTO Books (BookID, title, author, isbn, category) VALUES (3, 'Python for Serious Beginners', 'Harry Yoon', '978-2-98764663-5', 'Computing');
+INSERT INTO Books (BookID, title, author, isbn, category) VALUES (4, 'Algorithms Unlocked', 'Thomas Cormen', '978-026251880-2', 'Computing');
+
+INSERT INTO COPIES (CopyID, CopyNumber, BookID, UserID, IsBorrowed, DueBackDate) VALUES (1, 1, 2, 1, 1, '2022-10-15');
+INSERT INTO COPIES (CopyID, CopyNumber, BookID, UserID, IsBorrowed, DueBackDate) VALUES (2, 2, 4, 2, 1, '2022-10-30');
 
