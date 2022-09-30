@@ -2,17 +2,17 @@ package org.softwire.training.bookish.models.database;
 
 public class Book {
 
-    private String BookID;
+    private Integer BookID;
     private String title;
     private String author;
     private String isbn;
     private String category;
 
-    public String getBookID() {
+    public Integer getBookID() {
         return BookID;
     }
 
-    public void setBookID(String bookID) {
+    public void setBookID(Integer bookID) {
         BookID = bookID;
     }
 
