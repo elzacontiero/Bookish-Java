@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/styles/general.css"/>
+    <link rel="stylesheet" href="/styles/navbar.css"/>
+
+    <style>
+        td, th {
+            border: 1px solid #000000;
+            padding: 6px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+        tr:hover {background-color: #ddd;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #7e97ce;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar">
+    <!-- This element is replaced by the HTML in fragments/navbar.html -->
+</div>
+
+<div class="container">
+    <h2>All copies in the database:</h2>
+
+    <table class="copy-list">
+        <tr>
+            <th>CopyID</th>
+            <th>CopyNumber</th>
+            <th>BookID</th>
+            <th>UserID</th>
+            <th>DueBackDate</th>
+        </tr>
+
+        <tr th:each="copy : ${acm.copies}" class="copies">
+            <td th:text="${copy.copyID}">*</td>
+            <td th:text="${copy.copyNumber}">*</td>
+            <td th:text="${copy.bookID}">*</td>
+            <td th:text="${copy.userID}">*</td>
+            <td th:text="${copy.dueBackDate}">*</td>
+
+        </tr>
+
+    </table>
+</div>
+
+</body>
+</html>
+

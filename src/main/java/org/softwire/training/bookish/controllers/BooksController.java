@@ -1,5 +1,4 @@
 package org.softwire.training.bookish.controllers;
-
 import org.softwire.training.bookish.models.database.Book;
 import org.softwire.training.bookish.models.database.Technology;
 import org.softwire.training.bookish.models.page.AboutPageModel;
