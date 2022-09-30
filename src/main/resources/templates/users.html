@@ -27,9 +27,36 @@
 
 </head>
 <body>
-<div class="container">
 
+<div th:replace="fragments/navbar :: navbar">
+    <!-- This element is replaced by the HTML in fragments/navbar.html -->
+</div>
+
+<div class="container">
 <h2>List of all users</h2>
+    <table class="user-list">
+        <tr>
+            <th>UserID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Applied Fees</th>
+        </tr>
+
+        <tr th:each="user : ${model.users}" class="user">
+            <td th:text="${user.UserID}">*</td>
+            <td th:text="${user.FirstName}">*</td>
+            <td th:text="${user.LastName}">*</td>
+            <td th:text="${user.Email}">*</td>
+            <td th:text="${user.Address}">*</td>
+            <td th:text="${user.AppliedFees}">*</td>
+        </tr>
+
+    </table>
+
+
+
 </div>
 </body>
 </html>
