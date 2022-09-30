@@ -2,12 +2,62 @@ package org.softwire.training.bookish.models.database;
 
 public class Copies {
 
+    private String firstName;
+    private String lastName;
     private Integer copyID;
     private String copyNumber;
     private Integer bookID;
     private Integer userID;
-    private String isBorrowed;
+    private boolean isBorrowed;
     private String dueBackDate;
+    private String title;
+
+    @Override
+    public String toString() {
+        return "Copies{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", copyID=" + copyID +
+                ", copyNumber='" + copyNumber + '\'' +
+                ", bookID=" + bookID +
+                ", userID=" + userID +
+                ", isBorrowed=" + isBorrowed +
+                ", dueBackDate='" + dueBackDate + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public boolean isBorrowed() {
+        return isBorrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        isBorrowed = borrowed;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public Integer getCopyID() {
         return copyID;
@@ -41,11 +91,11 @@ public class Copies {
         this.userID = userID;
     }
 
-    public String getIsBorrowed() {
+    public boolean getIsBorrowed() {
         return isBorrowed;
     }
 
-    public void setIsBorrowed(String isBorrowed) {
+    public void setIsBorrowed(boolean isBorrowed) {
         this.isBorrowed = isBorrowed;
     }
 
@@ -57,15 +107,4 @@ public class Copies {
         this.dueBackDate = dueBackDate;
     }
 
-    @Override
-    public String toString() {
-        return "Copies{" +
-                "copyID=" + copyID +
-                ", copyNumber='" + copyNumber + '\'' +
-                ", bookID=" + bookID +
-                ", userID=" + userID +
-                ", isBorrowed='" + isBorrowed + '\'' +
-                ", dueBackDate='" + dueBackDate + '\'' +
-                '}';
-    }
 }

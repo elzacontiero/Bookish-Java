@@ -40,17 +40,19 @@
     <table class="copy-list">
         <tr>
             <th>CopyID</th>
-            <th>CopyNumber</th>
-            <th>BookID</th>
-            <th>UserID</th>
+            <th>Copy Number</th>
+            <th>Title</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>DueBackDate</th>
         </tr>
 
         <tr th:each="copy : ${acm.copies}" class="copies">
             <td th:text="${copy.copyID}">*</td>
             <td th:text="${copy.copyNumber}">*</td>
-            <td th:text="${copy.bookID}">*</td>
-            <td th:text="${copy.userID}">*</td>
+            <td th:text="${copy.title}">*</td>
+            <td th:text="${copy.firstName}">*</td>
+            <td th:text="${copy.lastName}">*</td>
             <td th:text="${copy.dueBackDate}">*</td>
 
         </tr>
