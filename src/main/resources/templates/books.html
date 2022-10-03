@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="/styles/general.css"/>
     <link rel="stylesheet" href="/styles/navbar.css"/>
-<!--    <link rel="stylesheet" href="/styles/about.css"/>-->
+    <link rel="stylesheet" href="/styles/books.css"/>
 
     <style>
         td, th {
@@ -33,7 +33,6 @@
 <div th:replace="fragments/navbar :: navbar">
     <!-- This element is replaced by the HTML in fragments/navbar.html -->
 </div>
-
     <div class="container">
         <h2>All books in the database:</h2>
 
@@ -56,8 +55,39 @@
                 </tr>
 
         </table>
-    </div>
 
+        <h2>Add a book:</h2>
+        <form th:action="@{/books/add-book}" method="post">
+            <div class="add-book-row">
+                <label>
+                    <span>Title: </span>
+                    <input type="text" name="title">
+                </label>
+            </div>
+            <div class="add-book-row">
+                <label>
+                    <span>Author: </span>
+                    <input type="text" name="author">
+                </label>
+            </div>
+            <div class="add-book-row">
+                <label>
+                    <span>ISBN: </span>
+                    <input type="text" name="isbn">
+                </label>
+            </div>
+            <div class="add-book-row">
+                <label>
+                    <span>Category: </span>
+                    <input type="text" name="category">
+                </label>
+            </div>
+            <div class="add-book-row">
+                <span><!-- spacer --></span>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
 </body>
 </html>
 

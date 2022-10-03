@@ -3,7 +3,7 @@ Create DATABASE Bookish;
 Use Bookish;
 
 CREATE TABLE Books(
-                      BookID integer  PRIMARY KEY,
+                      BookID integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
                       title varchar(250),
                       author varchar(255),
                       isbn varchar(30),
@@ -11,7 +11,7 @@ CREATE TABLE Books(
 );
 
 CREATE TABLE Users(
-                        UserID integer PRIMARY KEY,
+                        UserID integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
                         FirstName varchar (255),
                         LastName varchar (255),
                         Email varchar(300),
@@ -20,7 +20,7 @@ CREATE TABLE Users(
 );
 
 CREATE TABLE Copies(
-                       CopyID integer PRIMARY KEY,
+                       CopyID integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
                        CopyNumber int,
                        BookID int,
                        foreign key (BookID) references Books(BookID),
@@ -31,18 +31,18 @@ CREATE TABLE Copies(
 
 );
 
-insert into Users (UserID, FirstName, LastName, Email, Address, AppliedFees)
+insert into Users (FirstName, LastName, Email, Address, AppliedFees)
 values
-(1,'Elsa','Frozen','elsa@frozen.co.uk','NW34BJ',15.50),
-(2,'Galadriel','Elf','galadriel@rivendell.org','SW1A1AA',45.80),
-(3,'Han','Solo','han@starwars.org','LA23 1LJ',99.99),
-(4,'Chewbacca','Brown','chewie@starwars.org','DE4 1AB',80.50);
+('Elsa','Frozen','elsa@frozen.co.uk','NW34BJ',15.50),
+('Galadriel','Elf','galadriel@rivendell.org','SW1A1AA',45.80),
+('Han','Solo','han@starwars.org','LA23 1LJ',99.99),
+('Chewbacca','Brown','chewie@starwars.org','DE4 1AB',80.50);
 
-INSERT INTO Books (BookID, title, author, isbn, category) VALUES (1, 'Clean Code', 'Robert Martin', '978-0-13-235088-4', 'Computing');
-INSERT INTO Books (BookID, title, author, isbn, category) VALUES (2, 'Modern Java in Action', 'Raoul Urma', '978-1-61729356-6', 'Computing');
-INSERT INTO Books (BookID, title, author, isbn, category) VALUES (3, 'Python for Serious Beginners', 'Harry Yoon', '978-2-98764663-5', 'Computing');
-INSERT INTO Books (BookID, title, author, isbn, category) VALUES (4, 'Algorithms Unlocked', 'Thomas Cormen', '978-026251880-2', 'Computing');
+INSERT INTO Books (title, author, isbn, category) VALUES ('Clean Code', 'Robert Martin', '978-0-13-235088-4', 'Computing');
+INSERT INTO Books (title, author, isbn, category) VALUES ('Modern Java in Action', 'Raoul Urma', '978-1-61729356-6', 'Computing');
+INSERT INTO Books (title, author, isbn, category) VALUES ('Python for Serious Beginners', 'Harry Yoon', '978-2-98764663-5', 'Computing');
+INSERT INTO Books (title, author, isbn, category) VALUES ('Algorithms Unlocked', 'Thomas Cormen', '978-026251880-2', 'Computing');
 
-INSERT INTO COPIES (CopyID, CopyNumber, BookID, UserID, IsBorrowed, DueBackDate) VALUES (1, 1, 2, 1, 1, '2022-10-15');
-INSERT INTO COPIES (CopyID, CopyNumber, BookID, UserID, IsBorrowed, DueBackDate) VALUES (2, 2, 4, 2, 1, '2022-10-30');
+INSERT INTO COPIES (CopyNumber, BookID, UserID, IsBorrowed, DueBackDate) VALUES (1, 2, 1, 1, '2022-10-15');
+INSERT INTO COPIES (CopyNumber, BookID, UserID, IsBorrowed, DueBackDate) VALUES (2, 4, 2, 1, '2022-10-30');
 
