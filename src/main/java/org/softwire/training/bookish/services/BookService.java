@@ -24,6 +24,14 @@ public class BookService extends DatabaseService {
                         .execute()
         );
     }
+
+    public void deleteBook(int bookId) {
+        jdbi.useHandle(handle ->
+                handle.createUpdate("DELETE FROM books WHERE BookID = :id")
+                        .bind("id", bookId)
+                        .execute()
+        );
+    }
 }
 
 
