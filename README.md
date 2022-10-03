@@ -7,7 +7,7 @@ The full requirements can be found at https://corndel.atlassian.net/wiki/spaces/
 
 Landing page: 
 
-![Bookish](img/Bookish.png)
+![Bookish](img/bookish.png)
 
 Books page:
 
