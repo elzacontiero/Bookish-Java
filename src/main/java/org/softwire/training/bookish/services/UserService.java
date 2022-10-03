@@ -12,8 +12,26 @@ public class UserService extends DatabaseService {
                         .mapToBean(User.class)
                         .list()
         );
+    }
+    public void addUser(User user) {
+        jdbi.useHandle(handle ->
+                handle.createUpdate("INSERT INTO users (firstName,lastName,email,address,appliedFees) " +
+                                "VALUES (:firstName,:lastName,:email,:address,:appliedFees)")
+                        .bind("firstName", user.getFirstName())
+                        .bind("lastName", user.getLastName())
+                        .bind("email", user.getEmail())
+                        .bind("address", user.getAddress())
+                        .bind("appliedFees", user.getAppliedFees())
+                        .execute()
+        );
+    }
 
-
+    public void deleteUser(int userId) {
+        jdbi.useHandle(handle ->
+                handle.createUpdate("DELETE FROM users WHERE UserID = :id")
+                        .bind("id", userId)
+                        .execute()
+        );
     }
 
 }

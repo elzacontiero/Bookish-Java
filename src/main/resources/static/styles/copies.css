@@ -1,0 +1,51 @@
+h2 {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.delete-button {
+    margin-top: 10px;
+
+    background-color: indianred;
+    border-radius: 15px;
+    padding: 3px 10px 5px 10px;
+
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+}
+.delete-button:hover {
+    opacity: 1;
+}
+
+
+.add-copy-row {
+    padding: 5px 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.add-copy-row label {
+    display: flex;
+    flex-direction: row;
+}
+.add-copy-row span {
+    min-width: 120px;
+    display: inline-block;
+}
+
+.add-copy-row input[type="text"] {
+    flex-grow: 1;
+}
+.add-copy-row input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid dodgerblue;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+table {
+    width: 100%;
+}

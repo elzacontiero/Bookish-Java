@@ -19,4 +19,24 @@ public class CopiesService extends DatabaseService {
                         .list()
         );
     }
+
+    public void addCopy(Copies copy) {
+        jdbi.useHandle(handle ->
+                handle.createUpdate("INSERT INTO copies (copyNumber,bookID,userID,isBorrowed,dueBackDate) VALUES (:copyNumber,:bookID,:userID,:isBorrowed,:dueBackDate)")
+                        .bind("copyNumber", copy.getCopyNumber())
+                        .bind("bookID", copy.getBookID())
+                        .bind("userID", copy.getUserID())
+                        .bind("isBorrowed", copy.getIsBorrowed())
+                        .bind("dueBackDate", copy.getDueBackDate())
+                        .execute()
+        );
+    }
+
+    public void deleteCopies(int copyId) {
+        jdbi.useHandle(handle ->
+                handle.createUpdate("DELETE FROM copies WHERE CopyID = :id")
+                        .bind("id", copyId)
+                        .execute()
+        );
+    }
 }

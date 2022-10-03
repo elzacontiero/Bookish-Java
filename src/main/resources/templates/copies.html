@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/styles/general.css"/>
     <link rel="stylesheet" href="/styles/navbar.css"/>
+    <link rel="stylesheet" href="/styles/copies.css"/>
 
     <style>
         td, th {
@@ -41,23 +42,75 @@
         <tr>
             <th>CopyID</th>
             <th>Copy Number</th>
-            <th>Title</th>
+            <th>BookID</th>
+            <th>Book Title</th>
+            <th>UserID</th>
             <th>First Name</th>
-            <th>Last Name</th>
-            <th>DueBackDate</th>
+            <th>Is Borrowed</th>
+            <th>Due Back Date</th>
+            <th>Delete</th>
         </tr>
 
         <tr th:each="copy : ${acm.copies}" class="copies">
             <td th:text="${copy.copyID}">*</td>
             <td th:text="${copy.copyNumber}">*</td>
+            <td th:text="${copy.bookID}">*</td>
             <td th:text="${copy.title}">*</td>
+            <td th:text="${copy.userID}">*</td>
             <td th:text="${copy.firstName}">*</td>
-            <td th:text="${copy.lastName}">*</td>
+            <td>
+                <div th:if="${copy.isBorrowed}">
+                    <div>Yes</div>
+                </div>
+                <div th:unless="${copy.isBorrowed}">
+                    <div>No</div>
+                </div>
+            </td>
             <td th:text="${copy.dueBackDate}">*</td>
+            <td><a th:href="${'/copies/delete-copy?copyId=' + copy.copyID}" class="delete-button">delete</a></td>
 
         </tr>
 
     </table>
+
+    <h2>Add a copy:</h2>
+    <form th:action="@{/copies/add-copy}" method="post">
+        <div class="add-copy-row">
+            <label>
+                <span>Copy Number: </span>
+                <input type="text" name="copyNumber">
+            </label>
+        </div>
+        <div class="add-copy-row">
+            <label>
+                <span>BookID: </span>
+                <input type="text" name="bookID">
+            </label>
+        </div>
+        <div class="add-copy-row">
+            <label>
+                <span>UserID: </span>
+                <input type="text" name="userID">
+            </label>
+        </div>
+        <div class="add-copy-row">
+            <label>
+                <span>Is Borrowed: </span>
+                <input type="text" name="isBorrowed">
+            </label>
+        </div>
+        <div class="add-copy-row">
+            <label>
+                <span>Due Back Date: </span>
+                <input type="text" name="dueBackDate">
+            </label>
+        </div>
+        <div class="add-copy-row">
+            <span><!-- spacer --></span>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
 </div>
 
 </body>

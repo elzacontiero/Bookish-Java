@@ -43,6 +43,7 @@
             <th>Email</th>
             <th>Address</th>
             <th>Applied Fees</th>
+            <th>Delete</th>
         </tr>
 
         <tr th:each="user : ${model.users}" class="user">
@@ -52,6 +53,7 @@
             <td th:text="${user.Email}">*</td>
             <td th:text="${user.Address}">*</td>
             <td th:text="${user.AppliedFees}">*</td>
+            <td><a th:href="${'/users/delete-user?userId=' + user.UserID}" class="delete-button">delete</a></td>
         </tr>
 
     </table>
