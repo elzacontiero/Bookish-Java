@@ -50,24 +50,24 @@ h2 {
 }
 
 
-.add-book-row {
+.add-user-row {
     padding: 5px 0;
     font-family: "Segoe UI", sans-serif;
 }
 
-.add-book-row label {
+.add-user-row label {
     display: flex;
     flex-direction: row;
 }
-.add-book-row span {
-    min-width: 75px;
+.add-user-row span {
+    min-width: 100px;
     display: inline-block;
 }
 
-.add-book-row input[type="text"] {
+.add-user-row input[type="text"] {
     flex-grow: 1;
 }
-.add-book-row input[type="submit"] {
+.add-user-row input[type="submit"] {
     background-color: transparent;
     border: 1px solid dodgerblue;
     border-radius: 15px;
