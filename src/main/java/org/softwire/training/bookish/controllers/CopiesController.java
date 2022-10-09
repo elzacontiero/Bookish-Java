@@ -30,10 +30,10 @@ public class CopiesController {
 
         List<Copies> allCopies = copiesService.getAllCopies();
 
-        CopiesModel acm = new CopiesModel();
-        acm.setCopies(allCopies);
+        CopiesModel copiesModel = new CopiesModel();
+        copiesModel.setCopies(allCopies);
 
-        return new ModelAndView("copies", "acm", acm);
+        return new ModelAndView("copies", "model", copiesModel);
     }
 
     @RequestMapping("/add-copy")

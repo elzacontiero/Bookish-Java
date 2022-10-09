@@ -1,7 +1,5 @@
 package org.softwire.training.bookish.controllers;
 import org.softwire.training.bookish.models.database.Book;
-import org.softwire.training.bookish.models.database.Technology;
-import org.softwire.training.bookish.models.page.AboutPageModel;
 import org.softwire.training.bookish.models.page.BooksModel;
 import org.softwire.training.bookish.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +29,10 @@ public class BooksController {
 
         List<Book> allBooks = bookService.getAllBooks();
 
-        BooksModel abm = new BooksModel();
-        abm.setBooks(allBooks);
+        BooksModel booksModel = new BooksModel();
+        booksModel.setBooks(allBooks);
 
-        return new ModelAndView("books", "abm", abm);
+        return new ModelAndView("books", "model", booksModel);
     }
 
     @RequestMapping("/add-book")

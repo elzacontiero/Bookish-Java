@@ -51,7 +51,7 @@
             <th>Delete</th>
         </tr>
 
-        <tr th:each="copy : ${acm.copies}" class="copies">
+        <tr th:each="copy : ${model.copies}" class="copies">
             <td th:text="${copy.copyID}">*</td>
             <td th:text="${copy.copyNumber}">*</td>
             <td th:text="${copy.bookID}">*</td>
